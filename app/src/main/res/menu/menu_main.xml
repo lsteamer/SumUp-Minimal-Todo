@@ -12,6 +12,12 @@
         app:showAsAction="never"
         />
 
+    <item
+        android:id="@+id/donation_menu_item"
+        android:title="@string/donation"
+        app:showAsAction="never"
+        />
+
     <item android:title="@string/about"
         android:id="@+id/aboutMeMenuItem"
         app:showAsAction="never"

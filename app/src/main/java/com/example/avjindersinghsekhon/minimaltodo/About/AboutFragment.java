@@ -11,7 +11,7 @@ import com.example.avjindersinghsekhon.minimaltodo.Analytics.AnalyticsApplicatio
 import com.example.avjindersinghsekhon.minimaltodo.AppDefault.AppDefaultFragment;
 import com.example.avjindersinghsekhon.minimaltodo.R;
 
-public class AboutFragment extends AppDefaultFragment {
+public class AboutFragment extends AppDefaultFragment{
 
     private TextView mVersionTextView;
     private String appVersion = "0.1";
@@ -24,6 +24,8 @@ public class AboutFragment extends AppDefaultFragment {
         super.onCreate(savedInstanceState);
 
     }
+
+
 
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {

@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+
+
+    <TextView
+        android:id="@+id/tv_donation_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:height="28dp"
+        android:fontFamily="sans-serif-medium"
+        android:text="@string/dialog_donate_title"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView7" />
+
+    <TextView
+        android:id="@+id/tv_donation_content"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="With your help, hungry developers will be able to afford food."
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_donation_title" />
+
+
+    <LinearLayout
+        android:id="@+id/linear_buttons_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+
+
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button2">
+
+        <Button
+            android:id="@+id/donation_btn1"
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+
+            android:text="@string/donation_button_one" />
+
+        <Button
+            android:id="@+id/donation_btn2"
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:text="@string/donation_button_two" />
+
+        <Button
+            android:id="@+id/donation_btn3"
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:text="@string/donation_button_three" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linear_buttons_2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_marginTop="2dp"
+
+        android:orientation="horizontal"
+
+        app:layout_constraintEnd_toEndOf="@+id/linear_buttons_1"
+        app:layout_constraintStart_toStartOf="@+id/linear_buttons_1"
+        app:layout_constraintTop_toBottomOf="@id/linear_buttons_1">
+
+        <Button
+            android:id="@+id/donation_btn4"
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+
+            android:text="@string/donation_button_four" />
+
+        <Button
+            android:id="@+id/donation_btn5"
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:text="@string/donation_button_five" />
+
+        <Button
+            android:id="@+id/donation_btn6"
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:text="@string/donation_button_six" />
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/imageView7"
+        android:layout_width="162dp"
+        android:layout_height="133dp"
+        android:layout_marginTop="8dp"
+        android:src="@mipmap/ic_donation_icon"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="95dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="Login"
+        app:layout_constraintEnd_toEndOf="@+id/linear_buttons_1"
+        app:layout_constraintStart_toStartOf="@+id/linear_buttons_1"
+        app:layout_constraintTop_toBottomOf="@+id/tv_donation_content" />
+
+
+</android.support.constraint.ConstraintLayout>

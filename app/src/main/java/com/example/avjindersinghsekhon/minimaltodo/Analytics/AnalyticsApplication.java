@@ -2,6 +2,7 @@ package com.example.avjindersinghsekhon.minimaltodo.Analytics;
 
 import android.app.Application;
 import android.content.pm.PackageManager;
+import android.util.Log;
 
 import com.example.avjindersinghsekhon.minimaltodo.R;
 import com.google.android.gms.analytics.GoogleAnalytics;
@@ -14,6 +15,11 @@ public class AnalyticsApplication extends Application {
 
     private Tracker mTracker;
     private static final boolean IS_ENABLED = true;
+
+    @Override
+    public void onCreate() {
+        super.onCreate();
+    }
 
     synchronized private Tracker getDefaultTracker() {
         if (mTracker == null) {
