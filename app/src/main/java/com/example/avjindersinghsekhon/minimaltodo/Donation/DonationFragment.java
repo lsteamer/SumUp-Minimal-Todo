@@ -8,6 +8,8 @@ import android.widget.Button;
 
 import com.example.avjindersinghsekhon.minimaltodo.AppDefault.AppDefaultFragment;
 import com.example.avjindersinghsekhon.minimaltodo.R;
+import com.sumup.merchant.api.SumUpAPI;
+import com.sumup.merchant.api.SumUpLogin;
 
 public class DonationFragment extends AppDefaultFragment implements View.OnClickListener {
 
@@ -26,6 +28,8 @@ public class DonationFragment extends AppDefaultFragment implements View.OnClick
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
+        loginButton = (Button) view.findViewById(R.id.button2);
+        loginButton.setOnClickListener(this);
 
         getButtons(view);
 
@@ -34,7 +38,7 @@ public class DonationFragment extends AppDefaultFragment implements View.OnClick
 
     // Getting the Views & setting an onClickListener to the button variables.
     public void getButtons(View view){
-
+/*
         dButton1 = (Button) view.findViewById(R.id.donation_btn1);
         dButton1.setOnClickListener(this);
 
@@ -51,7 +55,7 @@ public class DonationFragment extends AppDefaultFragment implements View.OnClick
         dButton5.setOnClickListener(this);
 
         dButton6 = (Button) view.findViewById(R.id.donation_btn6);
-        dButton6.setOnClickListener(this);
+        dButton6.setOnClickListener(this);*/
 
     }
 
@@ -59,9 +63,20 @@ public class DonationFragment extends AppDefaultFragment implements View.OnClick
     @Override
     public void onClick(View v) {
 
+
+        Log.d("Wat","oneeeeee");
+
+
         switch (v.getId()){
 
-            case R.id.donation_btn1:
+            case R.id.button2:
+
+                // Please go to https://me.sumup.com/developers to get your Affiliate Key by entering the application ID of your app. (e.g. com.sumup.sdksampleapp)
+                SumUpLogin sumupLogin = SumUpLogin.builder("72cc96a1-1e06-43c0-8380-5413aa60585e").build();
+                SumUpAPI.openLoginActivity(getActivity(), sumupLogin, 1);
+                break;
+
+/*            case R.id.donation_btn1:
                 Log.d("Wat","oneeeeee");
                 break;
             case R.id.donation_btn2:
@@ -78,7 +93,7 @@ public class DonationFragment extends AppDefaultFragment implements View.OnClick
                 break;
             case R.id.donation_btn6:
                 Log.d("Wat","6");
-                break;
+                break;*/
             default:
                 break;
 
