@@ -6,12 +6,105 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:gravity="center|top"
     >
 
 
-    <Button
-        android:id="@+id/button2"
+    <ImageView
+        android:id="@+id/donateImageView"
+        android:scaleType="centerCrop"
+        android:src="@mipmap/ic_donation_icon"
+        android:layout_marginTop="50dp"
+        android:layout_width="100dp"
+        android:layout_height="100dp"/>
+
+    <TextView
+        android:text="@string/donation"
+        android:gravity="center"
+        android:textSize="34sp"
         android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:text="@string/dialog_donate_title"
+        android:gravity="center"
+        android:textSize="14sp"
+        android:textStyle="normal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:textSize="16sp"
+        android:gravity="center"
+        android:layout_marginTop="16dp"
+        android:text="@string/dialog_donate_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:textSize="16sp"
+        android:gravity="center"
+        android:layout_marginTop="8dp"
+        android:text="@string/dialog_donate_content2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <LinearLayout
+        android:layout_marginTop="24dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Button" />
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <Button
+                android:id="@+id/donation_btn1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/donation_button_one"
+                android:tag="@string/donation_amount_one" />
+            <Button
+                android:id="@+id/donation_btn2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/donation_button_two"
+                android:tag="@string/donation_amount_two"/>
+            <Button
+                android:id="@+id/donation_btn3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/donation_button_three"
+                android:tag="@string/donation_amount_three" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <Button
+                android:id="@+id/donation_btn4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/donation_button_four"
+                android:tag="@string/donation_amount_four" />
+            <Button
+                android:id="@+id/donation_btn5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/donation_button_five"
+                android:tag="@string/donation_amount_five" />
+            <Button
+                android:id="@+id/donation_btn6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/donation_button_six"
+                android:tag="@string/donation_amount_six" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
 </LinearLayout>

@@ -5,10 +5,8 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.ActionBar;
-import android.support.v7.app.AlertDialog;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
 
 import com.example.avjindersinghsekhon.minimaltodo.About.AboutActivity;
 import com.example.avjindersinghsekhon.minimaltodo.AppDefault.AppDefaultActivity;
@@ -17,6 +15,7 @@ import com.example.avjindersinghsekhon.minimaltodo.R;
 import com.example.avjindersinghsekhon.minimaltodo.Settings.SettingsActivity;
 
 public class MainActivity extends AppDefaultActivity {
+
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

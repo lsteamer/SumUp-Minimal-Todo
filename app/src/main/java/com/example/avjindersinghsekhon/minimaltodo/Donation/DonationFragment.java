@@ -1,21 +1,19 @@
 package com.example.avjindersinghsekhon.minimaltodo.Donation;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
 import com.example.avjindersinghsekhon.minimaltodo.AppDefault.AppDefaultFragment;
 import com.example.avjindersinghsekhon.minimaltodo.R;
-import com.sumup.merchant.api.SumUpAPI;
-import com.sumup.merchant.api.SumUpLogin;
+import com.example.avjindersinghsekhon.minimaltodo.SumUpPaymentActivity;
 
 public class DonationFragment extends AppDefaultFragment implements View.OnClickListener {
 
-    // These are the buttons that will be pressed by donation
+    // These are the buttons that will be pressed to make a donation
     private Button dButton1, dButton2, dButton3, dButton4, dButton5, dButton6;
-    private Button loginButton;
 
 
     @Override
@@ -28,9 +26,7 @@ public class DonationFragment extends AppDefaultFragment implements View.OnClick
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        loginButton = (Button) view.findViewById(R.id.button2);
-        loginButton.setOnClickListener(this);
-
+        // Initializing the buttons
         getButtons(view);
 
 
@@ -38,7 +34,7 @@ public class DonationFragment extends AppDefaultFragment implements View.OnClick
 
     // Getting the Views & setting an onClickListener to the button variables.
     public void getButtons(View view){
-/*
+
         dButton1 = (Button) view.findViewById(R.id.donation_btn1);
         dButton1.setOnClickListener(this);
 
@@ -55,7 +51,7 @@ public class DonationFragment extends AppDefaultFragment implements View.OnClick
         dButton5.setOnClickListener(this);
 
         dButton6 = (Button) view.findViewById(R.id.donation_btn6);
-        dButton6.setOnClickListener(this);*/
+        dButton6.setOnClickListener(this);
 
     }
 
@@ -63,44 +59,53 @@ public class DonationFragment extends AppDefaultFragment implements View.OnClick
     @Override
     public void onClick(View v) {
 
+        // Starting the intent to call SumUpPayment
+        Intent intentPayment = new Intent(getContext(), SumUpPaymentActivity.class);
 
-        Log.d("Wat","oneeeeee");
+        // String that will hold the value to be paid
+        String value = v.getTag().toString();
 
 
+        // Depending which button is pressed, we send different values for the payment
         switch (v.getId()){
 
-            case R.id.button2:
-
-                // Please go to https://me.sumup.com/developers to get your Affiliate Key by entering the application ID of your app. (e.g. com.sumup.sdksampleapp)
-                SumUpLogin sumupLogin = SumUpLogin.builder("72cc96a1-1e06-43c0-8380-5413aa60585e").build();
-                SumUpAPI.openLoginActivity(getActivity(), sumupLogin, 1);
-                break;
-
-/*            case R.id.donation_btn1:
-                Log.d("Wat","oneeeeee");
+            case R.id.donation_btn1:
+                intentPayment.putExtra(SumUpPaymentActivity.EXTRA_CODE, value);
+                startActivity(intentPayment);
+                getActivity().finish();
                 break;
             case R.id.donation_btn2:
-                Log.d("Wat","two");
+                intentPayment.putExtra(SumUpPaymentActivity.EXTRA_CODE, value);
+                startActivity(intentPayment);
+                getActivity().finish();
                 break;
             case R.id.donation_btn3:
-                Log.d("Wat","3");
+                intentPayment.putExtra(SumUpPaymentActivity.EXTRA_CODE, value);
+                startActivity(intentPayment);
+                getActivity().finish();
                 break;
             case R.id.donation_btn4:
-                Log.d("Wat","4");
+                intentPayment.putExtra(SumUpPaymentActivity.EXTRA_CODE, value);
+                startActivity(intentPayment);
+                getActivity().finish();
                 break;
             case R.id.donation_btn5:
-                Log.d("Wat","5");
+                intentPayment.putExtra(SumUpPaymentActivity.EXTRA_CODE, value);
+                startActivity(intentPayment);
+                getActivity().finish();
                 break;
             case R.id.donation_btn6:
-                Log.d("Wat","6");
-                break;*/
+                intentPayment.putExtra(SumUpPaymentActivity.EXTRA_CODE, value);
+                startActivity(intentPayment);
+                getActivity().finish();
+                break;
             default:
                 break;
 
         }
     }
 
-
+    // Legacy code.
     @Override
     protected int layoutRes() {
         return R.layout.fragment_donate;

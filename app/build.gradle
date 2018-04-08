@@ -50,4 +50,5 @@ dependencies {
     compile 'com.sumup:merchant-sdk:3.0.0'
 
     // implementation 'com.android.support.constraint:constraint-layout:1.0.2'
+    compile 'com.android.support.constraint:constraint-layout:1.0.2'
 }

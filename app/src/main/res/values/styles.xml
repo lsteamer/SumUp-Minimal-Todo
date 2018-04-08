@@ -132,4 +132,22 @@
 
     <!--</style>-->
 
+    <style name="AppThemeLightSumUp" parent="Theme.AppCompat.DayNight.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="windowNoTitle">false</item>
+        <item name="windowActionBar">true</item>
+        <item name="colorPrimary">@color/primary</item>
+        <item name="colorPrimaryDark">@color/primary_dark</item>
+        <item name="colorAccent">@color/primary_light</item>
+    </style>
+
+    <style name="AppThemeDarkSumUp" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="windowNoTitle">false</item>
+        <item name="windowActionBar">true</item>
+        <item name="colorAccent">@color/amber</item>
+        <item name="colorPrimary">@color/primary</item>
+        <item name="colorPrimaryDark">@color/primary_dark</item>
+    </style>
+
 </resources>

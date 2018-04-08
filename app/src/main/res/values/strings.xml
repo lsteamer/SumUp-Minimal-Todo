@@ -33,13 +33,21 @@
     <string name="todo_error">Please enter a Todo</string>
 
     <string name="dialog_donate_title">Make a one-time donation</string>
-    <string name="dialog_donate_content">With your help, hungry developers\nwill be able to afford food.</string>
-    <string name="donation_button_one">€1</string>
-    <string name="donation_button_two">€3</string>
-    <string name="donation_button_three">€5</string>
-    <string name="donation_button_four">€10</string>
-    <string name="donation_button_five">€15</string>
-    <string name="donation_button_six">€20</string>
+    <string name="dialog_donate_content">With your help, poor developers\nwill be able to afford much needed coffee.</string>
+    <string name="dialog_donate_content2">A developer with coffee is a happy developer!</string>
+
+    <string name="donation_button_one">€3</string>
+    <string name="donation_amount_one">3</string>
+    <string name="donation_button_two">€5</string>
+    <string name="donation_amount_two">5</string>
+    <string name="donation_button_three">€10</string>
+    <string name="donation_amount_three">10</string>
+    <string name="donation_button_four">€15</string>
+    <string name="donation_amount_four">15</string>
+    <string name="donation_button_five">€20</string>
+    <string name="donation_amount_five">20</string>
+    <string name="donation_button_six">€25</string>
+    <string name="donation_amount_six">25</string>
 
 
 </resources>

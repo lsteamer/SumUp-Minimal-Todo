@@ -45,8 +45,13 @@
         <activity
             android:name=".Settings.SettingsActivity"
             android:parentActivityName=".Main.MainActivity" />
-        <activity android:name=".Donation.DonationActivity"
-            android:parentActivityName=".Main.MainActivity"/>
+
+
+        <activity
+            android:name=".Donation.DonationActivity"
+            android:parentActivityName=".Main.MainActivity" />
+        <activity android:name=".SumUpPaymentActivity"
+            android:parentActivityName=".Main.MainActivity" />
     </application>
 
 </manifest>
