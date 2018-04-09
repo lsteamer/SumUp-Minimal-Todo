@@ -10,7 +10,7 @@ import android.view.MenuItem;
 
 import com.example.avjindersinghsekhon.minimaltodo.About.AboutActivity;
 import com.example.avjindersinghsekhon.minimaltodo.AppDefault.AppDefaultActivity;
-import com.example.avjindersinghsekhon.minimaltodo.Donation.DonationActivity;
+import com.example.avjindersinghsekhon.minimaltodo.donation.DonationActivity;
 import com.example.avjindersinghsekhon.minimaltodo.R;
 import com.example.avjindersinghsekhon.minimaltodo.Settings.SettingsActivity;
 
@@ -99,6 +99,7 @@ public class MainActivity extends AppDefaultActivity {
                 return super.onOptionsItemSelected(item);
         }
     }
+
 
 }
 

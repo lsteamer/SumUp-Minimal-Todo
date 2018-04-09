@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="#FFFFFF"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/titleReceiptPaymentSuccessful"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:fontFamily="sans-serif"
+
+        android:paddingBottom="20dp"
+        android:paddingTop="24dp"
+        android:paddingEnd="24dp"
+        android:paddingStart="24dp"
+
+        android:text="@string/payment_successful"
+        android:textColor="#000000"
+
+        android:textSize="20dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/bodyReceiptPaymentSuccessful"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+
+
+        android:text="@string/congratulations_your_payment_of"
+        android:textColor="#000000"
+
+        app:layout_constraintEnd_toEndOf="@+id/titleReceiptPaymentSuccessful"
+        app:layout_constraintStart_toStartOf="@+id/titleReceiptPaymentSuccessful"
+        app:layout_constraintTop_toBottomOf="@+id/titleReceiptPaymentSuccessful" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bodyReceiptPaymentSuccessful">
+
+        <TextView
+            android:id="@+id/amountReceiptPaymentSuccessful"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingRight="2dp"
+
+            android:textColor="#000000"
+            tools:text="00" />
+        <TextView
+            android:id="@+id/currencyReceiptPaymentSuccessful"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingRight="4dp"
+
+            android:textColor="#000000"
+            tools:text="€" />
+
+
+
+        <TextView
+            android:id="@+id/forThePaymentSuccessful"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingRight="4dp"
+
+            android:text="@string/to_receipt"
+            android:textColor="#000000"
+
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+
+        <TextView
+            android:id="@+id/productMotivePaymentSuccessful"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            tools:text="Product / Motive"
+            android:textColor="#000000"
+
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/forThePaymentSuccessful" />
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout">
+
+        <TextView
+            android:id="@+id/wasReceiptPaymentSuccessful"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingRight="4dp"
+
+            android:text="@string/was_receipt"
+            android:textColor="#000000" />
+
+        <TextView
+            android:id="@+id/statusReceiptPaymentSuccessful"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:textColor="#000000"
+            tools:text="success / failure" />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout2">
+
+        <TextView
+            android:id="@+id/reNumberTitleReceiptPaymentSuccessful"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingRight="4dp"
+
+            android:text="@string/your_receipt_number_is"
+            android:textColor="#000000" />
+
+        <TextView
+            android:id="@+id/receiptNumberReceiptPaymentSuccessful"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:textColor="#000000"
+            tools:text="Receipt #" />
+
+
+    </LinearLayout>
+
+
+
+    <TextView
+        android:id="@+id/logOutNumberReceiptPaymentSuccessful"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:textSize="16sp"
+        android:textStyle="normal"
+
+        android:textColor="#000000"
+        android:text="@string/do_you_want_to_log_out_of_sumup"
+        android:paddingTop="24dp"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout3"/>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:orientation="horizontal"
+
+        android:paddingTop="24dp"
+        android:paddingBottom="8dp"
+        android:paddingRight="8dp"
+
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/logOutNumberReceiptPaymentSuccessful"
+
+        style="?android:attr/buttonBarStyle">
+
+        <Button
+            android:id="@+id/signedInReceiptButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="?android:attr/buttonBarButtonStyle"
+            android:textColor="#0277BD"
+            android:text="@string/stay_signed_in" />
+
+        <Button
+            android:id="@+id/signOffReceiptButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="?android:attr/buttonBarButtonStyle"
+            android:textColor="#0277BD"
+            android:text="@string/sign_off" />
+    </LinearLayout>
+
+
+</android.support.constraint.ConstraintLayout>

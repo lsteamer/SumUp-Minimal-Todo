@@ -1,4 +1,4 @@
-package com.example.avjindersinghsekhon.minimaltodo.Donation;
+package com.example.avjindersinghsekhon.minimaltodo.donation;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -8,7 +8,7 @@ import android.widget.Button;
 
 import com.example.avjindersinghsekhon.minimaltodo.AppDefault.AppDefaultFragment;
 import com.example.avjindersinghsekhon.minimaltodo.R;
-import com.example.avjindersinghsekhon.minimaltodo.SumUpPaymentActivity;
+import com.example.avjindersinghsekhon.minimaltodo.sumUp.SumUpPaymentActivity;
 
 public class DonationFragment extends AppDefaultFragment implements View.OnClickListener {
 

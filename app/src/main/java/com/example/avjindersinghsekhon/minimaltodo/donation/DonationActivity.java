@@ -1,4 +1,4 @@
-package com.example.avjindersinghsekhon.minimaltodo.Donation;
+package com.example.avjindersinghsekhon.minimaltodo.donation;
 
 import android.graphics.Color;
 import android.graphics.PorterDuff;

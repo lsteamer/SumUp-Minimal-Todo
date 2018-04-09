@@ -32,6 +32,7 @@
     <string name="remove">Remove</string>
     <string name="todo_error">Please enter a Todo</string>
 
+
     <string name="dialog_donate_title">Make a one-time donation</string>
     <string name="dialog_donate_content">With your help, poor developers\nwill be able to afford much needed coffee.</string>
     <string name="dialog_donate_content2">A developer with coffee is a happy developer!</string>
@@ -48,6 +49,22 @@
     <string name="donation_amount_five">20</string>
     <string name="donation_button_six">€25</string>
     <string name="donation_amount_six">25</string>
+
+
+    <string name="payment_through_sumup">Payment through SumUp</string>
+    <string name="you_need_to_be_logged_in_to_make_the_payment">You need to be logged in to make the payment</string>
+    <string name="click_the_button_to_proceed">Click the Button to proceed</string>
+    <string name="sign_in">Sign in</string>
+    <string name="make_payment">Make payment</string>
+
+    <string name="payment_successful">Payment successful!</string>
+    <string name="congratulations_your_payment_of">Congratulations! Your payment of:</string>
+    <string name="to_receipt">for the</string>
+    <string name="was_receipt">was:</string>
+    <string name="your_receipt_number_is">Your receipt number is:</string>
+    <string name="do_you_want_to_log_out_of_sumup">Do you want to log Out of SumUp?</string>
+    <string name="stay_signed_in">Stay Signed in</string>
+    <string name="sign_off">Sign Off</string>
 
 
 </resources>
