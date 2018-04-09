@@ -1,3 +1,35 @@
+Added a toolbar menu to access a payment section that works with donations. <br>
+<img src="/screenshots/sumup1.jpg" height="400px"/> <img src="/screenshots/sumup2.jpg
+" height="400px"/><img src="/screenshots/sumup3.jpg
+" height="400px"/>
+<br>
+
+Pressing any of the buttons will take you to a SumUp Payment screen and a receipt option will be available. <br>
+<img src="/screenshots/sumup4.jpg" height="400px"/> <img src="/screenshots/sumup6.jpg
+" height="400px"/><img src="/screenshots/sumup7.jpg
+" height="400px"/>
+
+# Coder Notes
+This was a equally difficult and fun test. 
+
+For the donation screen I replicated the Activity-Fragment configurations. Both classes are under the donation package.
+The Payment was handled in the SumUpPaymentActivity class under the SumUp package.
+The SumUpAPI and the data structures under the dataModel are the Retrofit Classes.
+
+Originally I wanted to have every to-do editable for 1€ or have the alarm functionality behind a paywall on top of the donation section. Due to time constraints and code complexity these changes will have to wait until the next revision.
+
+# Bugs
+
+On some configurations, the main screen won't dynamically adapt to new items being added. If the app is restarted, they will show correctly. 
+
+Other issues might arise when connectivity is not optimal.
+
+# Important
+
+Android Plugin Version must remain 2.3.0. 
+Updating Gradle might incur in unknown errors.
+
+
 # Minimal ![Build Status](https://travis-ci.org/avjinder/Minimal-Todo.svg?branch=master)
 
 <img src="/screenshots/app_icon.png" height="200px"/> <br>
