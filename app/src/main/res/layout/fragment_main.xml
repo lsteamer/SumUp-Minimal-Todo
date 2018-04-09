@@ -1,4 +1,4 @@
-<LinearLayout
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
@@ -6,7 +6,6 @@
     android:gravity="center"
     android:layout_height="match_parent">
 
-    <!--<include layout="@layout/base_toolbar"/>-->
     <android.support.design.widget.CoordinatorLayout
         android:id="@+id/myCoordinatorLayout"
         android:layout_width="match_parent"
@@ -37,10 +36,6 @@
 
         </LinearLayout>
 
-        <FrameLayout
-            android:id="@+id/attachment_layout"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
 
 
         <com.example.avjindersinghsekhon.minimaltodo.Utility.RecyclerViewEmptySupport
@@ -57,7 +52,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="16dp"
 
-            app:layout_anchor="@id/attachment_layout"
+            app:layout_anchor="@id/toDoRecyclerView"
 
             app:layout_anchorGravity="bottom|right|end"
 
@@ -65,4 +60,4 @@
 
 
     </android.support.design.widget.CoordinatorLayout>
-</LinearLayout>
+</RelativeLayout>

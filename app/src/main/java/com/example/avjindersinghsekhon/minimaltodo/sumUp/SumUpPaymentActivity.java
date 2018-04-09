@@ -12,6 +12,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.avjindersinghsekhon.minimaltodo.R;
+import com.example.avjindersinghsekhon.minimaltodo.Main.MainFragment;
 import com.example.avjindersinghsekhon.minimaltodo.sumUp.dataModel.Receipt;
 import com.example.avjindersinghsekhon.minimaltodo.sumUp.dataModel.TransactionData;
 import com.sumup.merchant.api.SumUpAPI;
@@ -29,8 +30,6 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class SumUpPaymentActivity extends Activity {
 
-
-
     // public static final global variables
     public static final int REQUEST_CODE_LOGIN = 1;
     public static final int REQUEST_CODE_PAYMENT = 2;
@@ -46,6 +45,9 @@ public class SumUpPaymentActivity extends Activity {
     private static final String BASE_URL = "https://receipts-ng.sumup.com/v0.1/receipts/";
     // static merchant code for the API call
     private static final String PUBLIC_MERCHANT_CODE = "MDMQTMEM";
+    // static affiliate key
+    private static final String AFFILIATE_KEY = "72cc96a1-1e06-43c0-8380-5413aa60585e";
+
 
 
     // serverResponse is the server code given back by the retrofit call
@@ -61,10 +63,6 @@ public class SumUpPaymentActivity extends Activity {
     private Button sumUpSignIn, sumupPayment, stayLogged, logOff;
 
 
-    // The built retrofit
-    private Retrofit retrofit;
-
-
 
 
     @Override
@@ -77,7 +75,7 @@ public class SumUpPaymentActivity extends Activity {
         final String payableAmount =  getIntent().getExtras().getString(EXTRA_CODE);
 
 
-        // Finding the views in the project
+        // Button login
         sumUpSignIn = (Button) findViewById(R.id.loginButton);
         sumUpSignIn.setOnClickListener(new View.OnClickListener(){
             @Override
@@ -88,13 +86,14 @@ public class SumUpPaymentActivity extends Activity {
             }
         });
 
+        // Button Payment
         sumupPayment = (Button) findViewById(R.id.paymentButton);
         sumupPayment.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {
 
-                    // Making the payment
-                    makePayment(payableAmount);
+                // Making the payment
+                makePayment(payableAmount);
             }
         });
 
@@ -105,9 +104,8 @@ public class SumUpPaymentActivity extends Activity {
 
     // Logging in
     public void sumUpLogin(){
-        Log.d(TAG,"sumUpLogin area");
 
-        SumUpLogin sumupLogin = SumUpLogin.builder("72cc96a1-1e06-43c0-8380-5413aa60585e").build();
+        SumUpLogin sumupLogin = SumUpLogin.builder(AFFILIATE_KEY).build();
         SumUpAPI.openLoginActivity(this, sumupLogin, REQUEST_CODE_LOGIN);
     }
 
@@ -178,6 +176,10 @@ public class SumUpPaymentActivity extends Activity {
     public void retrofitStarter(String transactionCode){
 
 
+
+        // The built retrofit
+        Retrofit retrofit;
+
         retrofit = new Retrofit.Builder()
                 .baseUrl( BASE_URL )
                 .addConverterFactory(GsonConverterFactory.create())
@@ -188,7 +190,7 @@ public class SumUpPaymentActivity extends Activity {
         // Creating the full baseURL for the REST API call
         String fullBaseURL = BASE_URL + transactionCode + "?mid=" + PUBLIC_MERCHANT_CODE;
 
-        // Interface data
+        // Interface, Different file
         com.example.avjindersinghsekhon.minimaltodo.sumUp.SumUpAPI sumUpAPI = retrofit.create(com.example.avjindersinghsekhon.minimaltodo.sumUp.SumUpAPI.class);
 
         // Call
@@ -211,7 +213,7 @@ public class SumUpPaymentActivity extends Activity {
                 String timestamp = transactionData.getTimestamp();
                 String name = transactionData.getProducts().get(0).getName();
 
-                // And calling the dialog that will construct the Receipt
+                // And calling the method that will construct the Receipt - dialog
                 showDialog(amount, currency, name, status, receiptNumber, timestamp);
 
             }
@@ -262,6 +264,9 @@ public class SumUpPaymentActivity extends Activity {
         final AlertDialog dialog = mBuilder.create();
         dialog.show();
 
+
+
+        // The two buttons of the dialog below
 
         // If user wants to stay Logged in SumUp
         stayLogged = (Button) mView.findViewById(R.id.signedInReceiptButton);
