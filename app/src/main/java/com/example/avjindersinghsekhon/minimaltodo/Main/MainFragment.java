@@ -204,6 +204,7 @@ public class MainFragment extends AppDefaultFragment {
             editor.apply();
             getActivity().finish();
         }
+
         /*
         We need to do this, as this activity's onCreate won't be called when coming back from SettingsActivity,
         thus our changes to dark/light mode won't take place, as the setContentView() is not called again.
@@ -221,6 +222,7 @@ public class MainFragment extends AppDefaultFragment {
             editor.apply();
             getActivity().recreate();
         }
+
 
 
     }
@@ -521,6 +523,8 @@ public class MainFragment extends AppDefaultFragment {
         super.onDestroy();
         mRecyclerView.removeOnScrollListener(customRecyclerScrollViewListener);
     }
+
+
 
 
     @Override

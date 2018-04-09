@@ -120,7 +120,6 @@ public class SumUpPaymentActivity extends Activity {
                 .currency(SumUpPayment.Currency.EUR)
                 // optional: add details
                 .title("Donation to Minimal")
-                .receiptSMS("01748931295")
                 // optional: foreign transaction ID, must be unique!
                 .foreignTransactionId(UUID.randomUUID().toString()) // can not exceed 128 chars
                 .build();
