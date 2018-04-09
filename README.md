@@ -1,13 +1,11 @@
+# Minimal modified - Coder Notes
+
 Added a toolbar menu to access a payment section that works with donations. <br>
-<img src="/screenshots/sumup1.jpg" height="400px"/> <img src="/screenshots/sumup2.jpg
-" height="400px"/><img src="/screenshots/sumup3.jpg
-" height="400px"/>
+<img src="/screenshots/sumup1.jpg" height="400px"/> <img src="/screenshots/sumup2.jpg" height="400px"/><img src="/screenshots/sumup3.jpg" height="400px"/>
 <br>
 
 Pressing any of the buttons will take you to a SumUp Payment screen and a receipt option will be available. <br>
-<img src="/screenshots/sumup4.jpg" height="400px"/> <img src="/screenshots/sumup6.jpg
-" height="400px"/><img src="/screenshots/sumup7.jpg
-" height="400px"/>
+<img src="/screenshots/sumup4.jpg" height="400px"/> <img src="/screenshots/sumup6.jpg" height="400px"/><img src="/screenshots/sumup7.jpg" height="400px"/>
 
 # Coder Notes
 This was a equally difficult and fun test. 
