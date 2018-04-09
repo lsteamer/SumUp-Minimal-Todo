@@ -4,9 +4,9 @@
     android:layout_width="match_parent"
     android:orientation="vertical"
     android:gravity="center"
-    android:layout_height="match_parent">
+    android:layout_height="wrap_content">
 
-    <!--<include layout="@layout/base_toolbar"/>-->
+
     <android.support.design.widget.CoordinatorLayout
         android:id="@+id/myCoordinatorLayout"
         android:layout_width="match_parent"
@@ -42,11 +42,6 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
 
-        <!--<include layout="@layout/base_toolbar"/>-->
-
-
-        <!--</android.support.design.widget.AppBarLayout>-->
-
 
         <com.example.avjindersinghsekhon.minimaltodo.Utility.RecyclerViewEmptySupport
             app:layout_behavior="@string/appbar_scrolling_view_behavior"
@@ -67,7 +62,6 @@
             app:layout_anchorGravity="bottom|right|end"
 
             />
-
-
     </android.support.design.widget.CoordinatorLayout>
+
 </LinearLayout>

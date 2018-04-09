@@ -91,8 +91,6 @@ public class MainFragment extends AppDefaultFragment {
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         app = (AnalyticsApplication) getActivity().getApplication();
-//        CalligraphyConfig.initDefault(new CalligraphyConfig.Builder()
-//                .setDefaultFontPath("fonts/Aller_Regular.tff").setFontAttrId(R.attr.fontPath).build());
 
         //We recover the theme we've set and setTheme accordingly
         theme = getActivity().getSharedPreferences(THEME_PREFERENCES, MODE_PRIVATE).getString(THEME_SAVED, LIGHTTHEME);
@@ -118,25 +116,6 @@ public class MainFragment extends AppDefaultFragment {
         setAlarms();
 
 
-//        adapter.notifyDataSetChanged();
-//        storeRetrieveData = new StoreRetrieveData(this, FILENAME);
-//
-//        try {
-//            mToDoItemsArrayList = storeRetrieveData.loadFromFile();
-////            Log.d("OskarSchindler", "Arraylist Length: "+mToDoItemsArrayList.size());
-//        } catch (IOException | JSONException e) {
-////            Log.d("OskarSchindler", "IOException received");
-//            e.printStackTrace();
-//        }
-//
-//        if(mToDoItemsArrayList==null){
-//            mToDoItemsArrayList = new ArrayList<>();
-//        }
-//
-
-//        mToDoItemsArrayList = new ArrayList<>();
-//        makeUpItems(mToDoItemsArrayList, testStrings.length);
-
 
         mCoordLayout = (CoordinatorLayout) view.findViewById(R.id.myCoordinatorLayout);
         mAddToDoItemFAB = (FloatingActionButton) view.findViewById(R.id.addToDoItemFAB);
@@ -151,37 +130,13 @@ public class MainFragment extends AppDefaultFragment {
                 ToDoItem item = new ToDoItem("", false, null);
                 int color = ColorGenerator.MATERIAL.getRandomColor();
                 item.setTodoColor(color);
-                //noinspection ResourceType
-//                String color = getResources().getString(R.color.primary_ligher);
                 newTodo.putExtra(TODOITEM, item);
-//                View decorView = getWindow().getDecorView();
-//                View navView= decorView.findViewById(android.R.id.navigationBarBackground);
-//                View statusView = decorView.findViewById(android.R.id.statusBarBackground);
-//                Pair<View, String> navBar ;
-//                if(navView!=null){
-//                    navBar = Pair.create(navView, navView.getTransitionName());
-//                }
-//                else{
-//                    navBar = null;
-//                }
-//                Pair<View, String> statusBar= Pair.create(statusView, statusView.getTransitionName());
-//                ActivityOptions options;
-//                if(navBar!=null){
-//                    options = ActivityOptions.makeSceneTransitionAnimation(MainActivity.this, navBar, statusBar);
-//                }
-//                else{
-//                    options = ActivityOptions.makeSceneTransitionAnimation(MainActivity.this, statusBar);
-//                }
-
-//                startActivity(new Intent(MainActivity.this, TestLayout.class), options.toBundle());
-//                startActivityForResult(newTodo, REQUEST_ID_TODO_ITEM, options.toBundle());
 
                 startActivityForResult(newTodo, REQUEST_ID_TODO_ITEM);
             }
         });
 
 
-//        mRecyclerView = (RecyclerView)findViewById(R.id.toDoRecyclerView);
         mRecyclerView = (RecyclerViewEmptySupport) view.findViewById(R.id.toDoRecyclerView);
         if (theme.equals(LIGHTTHEME)) {
             mRecyclerView.setBackgroundColor(getResources().getColor(R.color.primary_lightest));
@@ -197,7 +152,6 @@ public class MainFragment extends AppDefaultFragment {
             public void show() {
 
                 mAddToDoItemFAB.animate().translationY(0).setInterpolator(new DecelerateInterpolator(2)).start();
-//                mAddToDoItemFAB.animate().translationY(0).setInterpolator(new AccelerateInterpolator(2.0f)).start();
             }
 
             @Override
@@ -217,7 +171,6 @@ public class MainFragment extends AppDefaultFragment {
 
 
         mRecyclerView.setAdapter(adapter);
-//        setUpTransitions();
 
 
     }
@@ -286,7 +239,6 @@ public class MainFragment extends AppDefaultFragment {
 
             SharedPreferences.Editor editor = sharedPreferences.edit();
             editor.putBoolean(CHANGE_OCCURED, false);
-//            editor.commit();
             editor.apply();
 
 
@@ -311,19 +263,6 @@ public class MainFragment extends AppDefaultFragment {
     }
 
 
-    public void addThemeToSharedPreferences(String theme) {
-        SharedPreferences sharedPreferences = getActivity().getSharedPreferences(THEME_PREFERENCES, MODE_PRIVATE);
-        SharedPreferences.Editor editor = sharedPreferences.edit();
-        editor.putString(THEME_SAVED, theme);
-        editor.apply();
-    }
-
-
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getActivity().getMenuInflater().inflate(R.menu.menu_main, menu);
-        return true;
-    }
-
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
@@ -331,22 +270,6 @@ public class MainFragment extends AppDefaultFragment {
                 Intent i = new Intent(getContext(), AboutActivity.class);
                 startActivity(i);
                 return true;
-//            case R.id.switch_themes:
-//                if(mTheme == R.style.CustomStyle_DarkTheme){
-//                    addThemeToSharedPreferences(LIGHTTHEME);
-//                }
-//                else{
-//                    addThemeToSharedPreferences(DARKTHEME);
-//                }
-//
-////                if(mTheme == R.style.CustomStyle_DarkTheme){
-////                    mTheme = R.style.CustomStyle_LightTheme;
-////                }
-////                else{
-////                    mTheme = R.style.CustomStyle_DarkTheme;
-////                }
-//                this.recreate();
-//                return true;
             case R.id.preferences:
                 Intent intent = new Intent(getContext(), SettingsActivity.class);
                 startActivity(intent);
@@ -460,7 +383,7 @@ public class MainFragment extends AppDefaultFragment {
             deleteAlarm(i, mJustDeletedToDoItem.getIdentifier().hashCode());
             notifyItemRemoved(position);
 
-//            String toShow = (mJustDeletedToDoItem.getToDoText().length()>20)?mJustDeletedToDoItem.getToDoText().substring(0, 20)+"...":mJustDeletedToDoItem.getToDoText();
+
             String toShow = "Todo";
             Snackbar.make(mCoordLayout, "Deleted " + toShow, Snackbar.LENGTH_LONG)
                     .setAction("UNDO", new View.OnClickListener() {
@@ -490,13 +413,11 @@ public class MainFragment extends AppDefaultFragment {
         @Override
         public void onBindViewHolder(final BasicListAdapter.ViewHolder holder, final int position) {
             ToDoItem item = items.get(position);
-//            if(item.getToDoDate()!=null && item.getToDoDate().before(new Date())){
-//                item.setToDoDate(null);
-//            }
+
             SharedPreferences sharedPreferences = getActivity().getSharedPreferences(THEME_PREFERENCES, MODE_PRIVATE);
-            //Background color for each to-do item. Necessary for night/day mode
+
             int bgColor;
-            //color of title text in our to-do item. White for night mode, dark gray for day mode
+
             int todoTextColor;
             if (sharedPreferences.getString(THEME_SAVED, LIGHTTHEME).equals(LIGHTTHEME)) {
                 bgColor = Color.WHITE;
@@ -510,23 +431,14 @@ public class MainFragment extends AppDefaultFragment {
             if (item.hasReminder() && item.getToDoDate() != null) {
                 holder.mToDoTextview.setMaxLines(1);
                 holder.mTimeTextView.setVisibility(View.VISIBLE);
-//                holder.mToDoTextview.setVisibility(View.GONE);
+
             } else {
                 holder.mTimeTextView.setVisibility(View.GONE);
                 holder.mToDoTextview.setMaxLines(2);
             }
             holder.mToDoTextview.setText(item.getToDoText());
             holder.mToDoTextview.setTextColor(todoTextColor);
-//            holder.mColorTextView.setBackgroundColor(Color.parseColor(item.getTodoColor()));
 
-//            TextDrawable myDrawable = TextDrawable.builder().buildRoundRect(item.getToDoText().substring(0,1),Color.RED, 10);
-            //We check if holder.color is set or not
-//            if(item.getTodoColor() == null){
-//                ColorGenerator generator = ColorGenerator.MATERIAL;
-//                int color = generator.getRandomColor();
-//                item.setTodoColor(color+"");
-//            }
-//            Log.d("OskarSchindler", "Color: "+item.getTodoColor());
             TextDrawable myDrawable = TextDrawable.builder().beginConfig()
                     .textColor(Color.WHITE)
                     .useFont(Typeface.DEFAULT)
@@ -534,7 +446,6 @@ public class MainFragment extends AppDefaultFragment {
                     .endConfig()
                     .buildRound(item.getToDoText().substring(0, 1), item.getTodoColor());
 
-//            TextDrawable myDrawable = TextDrawable.builder().buildRound(item.getToDoText().substring(0,1),holder.color);
             holder.mColorImageView.setImageDrawable(myDrawable);
             if (item.getToDoDate() != null) {
                 String timeToShow;
@@ -566,10 +477,8 @@ public class MainFragment extends AppDefaultFragment {
             View mView;
             LinearLayout linearLayout;
             TextView mToDoTextview;
-            //            TextView mColorTextView;
             ImageView mColorImageView;
             TextView mTimeTextView;
-//            int color = -1;
 
             public ViewHolder(View v) {
                 super(v);
@@ -585,7 +494,6 @@ public class MainFragment extends AppDefaultFragment {
                 });
                 mToDoTextview = (TextView) v.findViewById(R.id.toDoListItemTextview);
                 mTimeTextView = (TextView) v.findViewById(R.id.todoListItemTimeTextView);
-//                mColorTextView = (TextView)v.findViewById(R.id.toDoColorTextView);
                 mColorImageView = (ImageView) v.findViewById(R.id.toDoListItemColorImageView);
                 linearLayout = (LinearLayout) v.findViewById(R.id.listItemLinearLayout);
             }
@@ -594,20 +502,7 @@ public class MainFragment extends AppDefaultFragment {
         }
     }
 
-    //Used when using custom fonts
-//    @Override
-//    protected void attachBaseContext(Context newBase) {
-//        super.attachBaseContext(CalligraphyContextWrapper.wrap(newBase));
-//    }
 
-    private void saveDate() {
-        try {
-            storeRetrieveData.saveToFile(mToDoItemsArrayList);
-        } catch (JSONException | IOException e) {
-            e.printStackTrace();
-        }
-
-    }
 
     @Override
     public void onPause() {
@@ -628,22 +523,6 @@ public class MainFragment extends AppDefaultFragment {
     }
 
 
-    //    public void setUpTransitions(){
-//        if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP){
-//            Transition enterT = new Slide(Gravity.RIGHT);
-//            enterT.setDuration(500);
-//
-//            Transition exitT = new Slide(Gravity.LEFT);
-//            exitT.setDuration(300);
-//
-//            Fade fade = new Fade();
-//            fade.setDuration(500);
-//
-//            getWindow().setExitTransition(fade);
-//            getWindow().setReenterTransition(fade);
-//
-//        }
-//    }
     @Override
     protected int layoutRes() {
         return R.layout.fragment_main;
